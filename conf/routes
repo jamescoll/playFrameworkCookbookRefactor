@@ -1,0 +1,56 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.Application.index
+
+GET     /async_example              controllers.Application.asyncExample
+
+GET     /upload_form                controllers.Application.uploadForm
+POST    /upload                     controllers.Application.handleUpload
+
+# These are deprecated methods now
+# GET     /products/:product          controllers.Products.edit(product: models.Product)
+PUT     /products/:sku              controllers.Products.update(sku)
+
+GET     /dashboard                  controllers.Application.dashboard
+GET     /login                      controllers.Application.login
+
+GET     /session_example            controllers.Application.modifySession
+
+GET     /cookie_example             controllers.Application.modifyCookies
+
+GET     /header_example             controllers.Application.modifyHeaders
+
+GET     /categories                 @controllers.CategoryController.index
+
+GET     /cache                      controllers.Application.displayFromCache
+
+POST    /api/products               controllers.Products.create
+GET     /api/products               controllers.Products.index
+
+GET     /bootstrapped               controllers.Application.bootstrapped
+
+GET     /client/get_todos           controllers.WebClient.getTodos
+
+PUT     /api/products/:id           controllers.Products.edit(id : String)
+
+DELETE  /api/products/:id           controllers.Products.delete(id : String)
+
+GET     /client/get_tweets/:hashtag controllers.WebClient.getTweets(hashtag)
+
+POST    /register                   controllers.Registrations.register
+POST    /auth                       controllers.Registrations.login
+
+GET     /generate-product-id        controllers.Application.generateProductId
+GET     /generate-user-id           controllers.Application.generateUserId
+
+POST    /messages/send              controllers.Messenger.sendMessage
+GET     /messages                   controllers.Messenger.getMessages
+
+POST    /user/auth                  controllers.Application.auth
+GET     /admin                      controllers.Application.adminOnly
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

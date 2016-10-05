@@ -1,0 +1,8 @@
+@(sku: String, productForm: Form[models.Product])
+
+@helper.form(action = routes.Products.update(sku)) {
+    @helper.inputText(productForm("sku"))
+    @helper.inputText(productForm("title"))
+
+    <input type="submit" />
+}

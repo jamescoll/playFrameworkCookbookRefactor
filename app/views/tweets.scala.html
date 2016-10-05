@@ -1,0 +1,10 @@
+@(tweets: Map[String, String])
+
+<ul>
+
+	@tweets.map { tw =>
+      <li><strong>@@@tw._1</strong> says </li>" @tw._2 " </i></li>
+
+	}
+
+</ul>
